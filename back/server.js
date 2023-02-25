@@ -29,8 +29,26 @@ const http = require('http');
 // puis, on montera ce serveur sur un autre serveur, socket.io cette fois-ci
 const io = require('socket.io');
 
-// console.log("THEY CAME LIKE MOTHS TO A FLAAAAAAAAAAAAAAAAAAAAAAAAAME")
-// instanciation de l'app
-const APP = express();
 
+/**
+ * CONSTANTES
+ */
+
+// instanciation de l'app
+const app = express();
+// instanciation du serveur http, sur lequel on monte l'application
+const serverHttp = http.createServer(app);
+// instanciation du serveur socket.io, sur lequel on monte le serveur HTTP
+const serverIo = new io.Server(serverHttp);
+const port = 8080;
+
+// on fait tourner le serveur
+serverHttp.listen(port, () => {
+    console.log("L'application tourne sur le port " + port);
+});
+
+
+/**
+ * SCRIPT
+ */
 
