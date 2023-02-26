@@ -42,13 +42,36 @@ const serverHttp = http.createServer(app);
 const serverIo = new io.Server(serverHttp);
 const port = 8080;
 
-// on fait tourner le serveur
-serverHttp.listen(port, () => {
-    console.log("L'application tourne sur le port " + port);
-});
-
 
 /**
  * SCRIPT
  */
 
+// on autorise l'accès au fichier views
+app.use(express.static("..views/html"));
+
+// URL menant à la page web de la télécommande
+app.get('/remote', (request, response) => {
+    // affichage de la page télécommande
+    response.sendFile('/exos/1_REMOTE/views/html/remote.html');
+    serverIo.on('connection', (socket) => {
+        console.log('Utilisateur connecté à la télécommande')
+    });
+});
+
+// URL menant à la page web du robot
+app.get('/robot', (request, response) => {
+    // affichage de la page robot
+    response.sendFile('/exos/1_REMOTE/views/html/robot.html');
+    serverIo.on('connection', (socket) => {
+        console.log('Utilisateur connecté au robot')
+    });
+});
+
+
+
+
+// on fait tourner le serveur http
+serverHttp.listen(port, () => {
+    console.log("L'application tourne sur le port " + port);
+});
