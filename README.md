@@ -29,16 +29,21 @@ Diane (MogwaiRGod)
 <hr>
 <br>
 
-# FONCTIONNEMENT
+# Fonctionnement
 Application Express tournant sur un serveur HTTP lui-même monté sur un serveur socket.io, afin de bénéficier de ses connexions en temps-réel. Les modules ont été importés en utilisant l'image Docker Alpine.
+## Utilisation
+* Après téléchargement des dossiers, installer les modules nécessaires et se déplacer dans le dossier back pour lancer le serveur.
+* Aller sur : **localhost:4000/robot**
+* Sur une autre page du navigateur, aller sur : **localhost:4000/remote** <br>
+Utiliser les flèches directionneles ou ZQSD pour déplacer le robot de l'autre page.
  
-# CONTENU
+# Contenu
 ## /back
 * server.js
 L'application-serveur qui gère les requêtes envoyées du côté client (la télécommande) et qui en renvoie à un autre client (le robot).
 ## /views
 ### /html
-* remote.html
-Sur cette page, en utlisant les flèches directionnelles ou les touches ZQSD on fait déplacer le robot sur l'autre page web.
-* robot.html
-L'utilisateur n'interagit pas avec cette page. C'est juste pour la plaisir de regarder le robot se mouvoir.
+| Page | Description |
+|:--|:--|
+|**remote.html**|Sur cette page, en utlisant les flèches directionnelles ou les touches ZQSD on fait déplacer le robot sur l'autre page web.|
+|**robot.html**|L'utilisateur n'interagit pas avec cette page. C'est juste pour la plaisir de regarder le robot se mouvoir.|
