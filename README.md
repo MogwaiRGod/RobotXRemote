@@ -13,10 +13,8 @@ Diane (MogwaiRGod)
 * Docker
 
 ## Langages
-|-|
-| HTML |
-| CSS |
-| JavaScript |
+|HTML|CSS|JavaScript|
+|-|-|-|
 
 ## Bibliothèques
 
