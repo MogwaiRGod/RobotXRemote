@@ -14,7 +14,9 @@ Diane (MogwaiRGod)
 
 ## Langages
 | HTML |
+|-|
 | CSS |
+|-|
 | JavaScript |
 |-|
 
