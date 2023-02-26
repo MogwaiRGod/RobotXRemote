@@ -13,9 +13,9 @@ Diane (MogwaiRGod)
 * Docker
 
 ## Langages
-* HTML
-* CSS
-* JavaScript
+| HTML |
+| CSS |
+| JavaScript |
 
 ## Bibliothèques
 
@@ -33,13 +33,19 @@ Diane (MogwaiRGod)
 Application Express tournant sur un serveur HTTP lui-même monté sur un serveur socket.io, afin de bénéficier de ses connexions en temps-réel. Les modules ont été importés en utilisant l'image Docker Alpine.
 ## Utilisation
 * Après téléchargement des dossiers, installer les modules nécessaires et se déplacer dans le dossier back pour lancer le serveur.
-* Aller sur : **localhost:4000/robot**
-* Sur une autre page du navigateur, aller sur : **localhost:4000/remote** <br>
+* Aller sur : 
+```
+localhost:4000/robot
+```
+* Sur une autre page du navigateur, aller sur : 
+```
+localhost:4000/remote
+```
 Utiliser les flèches directionneles ou ZQSD pour déplacer le robot de l'autre page.
  
 # Contenu
 ## /back
-* server.js
+* server.js <br>
 L'application-serveur qui gère les requêtes envoyées du côté client (la télécommande) et qui en renvoie à un autre client (le robot).
 ## /views
 ### /html
