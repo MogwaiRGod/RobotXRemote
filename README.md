@@ -45,7 +45,8 @@ Utiliser les flèches directionneles ou ``ZQSD`` pour déplacer le robot de l'au
  
 # Contenu
 ## /back
-* server.js <br>
+|server.js|
+|-|
 L'application-serveur qui gère les requêtes envoyées du côté client (la télécommande) et qui en renvoie à un autre client (le robot).
 ## /views
 ### /html
