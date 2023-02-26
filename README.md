@@ -9,8 +9,8 @@ Diane (MogwaiRGod)
 # Technologies
 
 ## Plateformes logicielles
-* Node.Js
-* Docker
+|Node.js|Docker|
+|-|-|
 
 ## Langages
 |HTML|CSS|JavaScript|
