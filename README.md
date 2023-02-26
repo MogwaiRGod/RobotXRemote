@@ -29,7 +29,8 @@ Diane (MogwaiRGod)
 <br>
 
 # Fonctionnement
-Application Express tournant sur un serveur HTTP lui-même monté sur un serveur socket.io, afin de bénéficier de ses connexions en temps-réel. Les modules ont été importés en utilisant l'image Docker Alpine.
+> Application Express tournant sur un serveur HTTP lui-même monté sur un serveur socket.io, afin de bénéficier de ses connexions en temps-réel. 
+> Les modules ont été importés en utilisant l'image Docker Alpine.
 ## Utilisation
 * Après téléchargement des dossiers, installer les modules nécessaires et se déplacer dans le dossier back pour lancer le serveur.
 * Aller sur : 
@@ -40,7 +41,7 @@ localhost:4000/robot
 ```
 localhost:4000/remote
 ```
-Utiliser les flèches directionneles ou ZQSD pour déplacer le robot de l'autre page.
+Utiliser les flèches directionneles ou ``ZQSD`` pour déplacer le robot de l'autre page.
  
 # Contenu
 ## /back
