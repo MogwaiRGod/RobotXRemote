@@ -16,9 +16,7 @@ Diane (MogwaiRGod)
 | HTML |
 |-|
 | CSS |
-|-|
 | JavaScript |
-|-|
 
 ## Bibliothèques
 
