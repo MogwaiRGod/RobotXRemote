@@ -17,15 +17,23 @@
         }
     </style>
     <div id="container">
-        <button>UP</button>
-        <button>RIGHT</button>
-        <button>DOWN</button>
-        <button>LEFT</button>
     </div>
 
     <script>
         // on instancie un canal pour l'utilisateur
         let socket = io();
+
+        let maxX; let maxY; let posX; let posY; let pace;
+        // On récupère les données initiales du document robot
+        socket.on('init data', (data) => {
+            data = JSON.parse(data);
+            maxX = parseInt(data.maxX);
+            maxY = parseInt(data.maxY);
+            posX = parseInt(data.posX);
+            posY = parseInt(data.posY);
+            pace = parseInt(data.pace);
+        });
+
 
         // à la pression d'une touche
         document.addEventListener("keydown", (event) => {
@@ -33,6 +41,7 @@
              * On évalue la touche pressée dans un sens horaire
              * On utilise les flèches et les touches QZDS
              */
+
             switch(event.key) {
                 // touche vers le haut
                 case 'ArrowUp':
@@ -43,7 +52,7 @@
                         // on modifie la position y
                         posY = posY - pace;
                         // on màj la position du robot en CSS
-                        robot.style.top = posY + 'px';
+                        socket.emit("moveY", posY);
                     }
                     // robot.style.animation = 'moveUp linear 3s forwards';
                     break;
@@ -55,7 +64,7 @@
                     if (posX < maxX) {
                         // on modifie la position x
                         posX = posX + pace;
-                        robot.style.left = posX + 'px';
+                        socket.emit("moveX", posX);
                     }
                     // robot.style.animation = 'moveRight linear 3s forwards';
                     break;
@@ -67,7 +76,7 @@
                     if (posY < maxY) {
                         // on modifie la position y
                         posY = posY + pace;
-                        robot.style.top = posY + 'px';
+                        socket.emit("moveY", posY);
                     }
                     // robot.style.animation = 'moveDown linear 3s forwards';
                     break;
@@ -79,8 +88,7 @@
                     if (posX > 0) {
                         // on modifie la position x
                         posX = posX - pace;
-                        console.log(posX + 'px')
-                        robot.style.left = posX + 'px';
+                        socket.emit("moveX", posX);
                     }
                     // robot.style.animation = 'moveLeft linear 3s forwards';
                     break;
@@ -89,6 +97,7 @@
                     return;
             }                
         });
+
     </script>
 
   </body>

@@ -6,6 +6,7 @@
     <title>Robot</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Diane">
+    <!-- On inclut la bibliothèque dans le document HTML -->
     <script src="/socket.io/socket.io.js"></script>
   </head>
 
@@ -15,9 +16,12 @@
             background: rgb(18, 16, 17);
         }
         svg {
+            /* On fait démarrer le robot au milieu de la fenêtre */
             position: relative;
-            left: 500px;
-            top: 500px;
+            left: 50vw;
+            top: 50vh;
+            padding: 0;
+            margin: 0;
         }
         /**
          * Animation
@@ -59,27 +63,34 @@
         const pace = 30;
         // initialisatin d'un canal
         let socket = io();
-
-
-        /**
-         * VARIABLES
-         */
-        // on récupère les coordonnées (x, y) actuelles du robot définies dans le CSS
-        let posX = window.getComputedStyle(robot, null).getPropertyValue("left");
-        // on récupère uniquement la partie numérique de la position
-        posX = parseInt(posX.substring(0, posX.length - 2));
-        let posY = window.getComputedStyle(robot, null).getPropertyValue("top");
-        posY = parseInt(posY.substring(0, posY.length - 2));
-        // on récupère les heuteurs et largeurs max de la fenêtre ; on ne les stocke pas dans des constantes au cas où l'utilisateur redimensionnerait sa fenêtre
-        let maxX = window.innerWidth - 48;
-        let maxY = window.innerHeight - 48;
-
+        
 
         /**
-         * SCRIPT
+         * EMETTEURS/ECOUTEURS D'EVENEMENT
          */
-        // on envoie les données initiales du document (robot, fenêtre...) au serveur
+        socket.emit('init data', 
+        /* On envoie, à l'ouverture du document, un objet JSON contenant les informations nécessaires
+        du robot */
+        {
+            /* la largeur max de la fenêtre */
+            "maxX": window.innerWidth - 50,
+            /* idem pour la hauteur */
+            "maxY": window.innerHeight - 50,
+            /* la vitesse de déplacement */
+            "pace": 30,
+            /* coordonnées x et y du robot */
+            "posX": robot.getBoundingClientRect().x,
+            "posY": robot.getBoundingClientRect().y,
+            
+        });
 
+        socket.on('moveY', data => {
+            robot.style.top = data + 'px';
+        });
+        socket.on('moveX', data => {
+            robot.style.left = data + 'px';
+        });
+  
     </script>
   </body>
 </html>
