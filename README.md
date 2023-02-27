@@ -32,7 +32,7 @@ Diane (MogwaiRGod)
 > Application Express tournant sur un serveur HTTP lui-même monté sur un serveur socket.io, afin de bénéficier de ses connexions en temps-réel. <br>
 > Les modules ont été importés en utilisant l'image Docker Alpine.
 ## Utilisation
-* Après téléchargement des dossiers, vérifier que Node.Js est installé avec la commande ``node -v``, puis installer les (modules mentionnées précédemment)[#bibliothèques] à l'aide de la commande ``npm i {nom du module}`` et se déplacer dans le dossier ``/back`` pour lancer le serveur.
+* Après téléchargement des dossiers, vérifier que Node.Js est installé avec la commande ``node -v``, puis installer les [modules mentionnées précédemment](#bibliothèques) à l'aide de la commande ``npm i {nom du module}`` et se déplacer dans le dossier ``/back`` pour lancer le serveur.
 * Aller sur : 
 ```
 localhost:4000/robot
