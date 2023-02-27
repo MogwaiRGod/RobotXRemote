@@ -29,10 +29,10 @@ Diane (MogwaiRGod)
 <br>
 
 # Fonctionnement
-> Application Express tournant sur un serveur HTTP lui-même monté sur un serveur socket.io, afin de bénéficier de ses connexions en temps-réel. 
+> Application Express tournant sur un serveur HTTP lui-même monté sur un serveur socket.io, afin de bénéficier de ses connexions en temps-réel. <br>
 > Les modules ont été importés en utilisant l'image Docker Alpine.
 ## Utilisation
-* Après téléchargement des dossiers, installer les modules nécessaires et se déplacer dans le dossier back pour lancer le serveur.
+* Après téléchargement des dossiers, vérifier que Node.Js est installé avec la commande ``node -v``, puis installer les (modules mentionnées précédemment)[#bibliothèques] à l'aide de la commande ``npm i {nom du module}`` et se déplacer dans le dossier ``/back`` pour lancer le serveur.
 * Aller sur : 
 ```
 localhost:4000/robot
@@ -41,7 +41,7 @@ localhost:4000/robot
 ```
 localhost:4000/remote
 ```
-Utiliser les flèches directionneles ou ``ZQSD`` pour déplacer le robot de l'autre page.
+Utiliser les flèches directionnelles ou ``ZQSD`` pour déplacer le robot de l'autre page.
  
 # Contenu
 ## /back
@@ -53,5 +53,5 @@ L'application-serveur qui gère les requêtes envoyées du côté client (la té
 ### /html
 | Page | Description |
 |:--|:--|
-|**remote.html**|Sur cette page, en utlisant les flèches directionnelles ou les touches ZQSD on fait déplacer le robot sur l'autre page web.|
-|**robot.html**|L'utilisateur n'interagit pas avec cette page. C'est juste pour la plaisir de regarder le robot se mouvoir.|
+|**remote.html**|Sur cette page, en utlisant les flèches directionnelles ou les touches ``ZQSD`` on fait déplacer le robot sur l'autre page web.|
+|**robot.html**|L'utilisateur n'interagit pas avec cette page. C'est juste pour le plaisir de regarder le robot se mouvoir.|
